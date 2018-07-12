@@ -1,6 +1,7 @@
 package apochain;
 
 import org.apache.log4j.Logger;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.security.Security;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class ApoChain {
     public static void main(String[] args) {
 
         // add our blocks to the blockchain ArrayList:
-        Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider()); // setup Bouncey castle as a Security Provider tool
+        Security.addProvider(new BouncyCastleProvider()); // setup Bouncey castle as a Security Provider tool
 
         // create wallets:
         walletA = new Wallet();
@@ -100,7 +101,7 @@ public class ApoChain {
                 return false;
             }
 
-            // loop thru blockchains transactions:
+            // loop through blockchain transactions:
             TransactionOutput tempOutput;
             for (int t = 0; t < currentBlock.transactions.size(); t++) {
                 Transaction currentTransaction = currentBlock.transactions.get(t);

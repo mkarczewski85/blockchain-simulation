@@ -13,13 +13,13 @@ public class Transaction {
     public String transactionId; // contains a hash of transaction
     public PublicKey sender; // senders address (his public key)
     public PublicKey recipient; // recipients address (his public key)
-    public float value; // amount of apo coins we want to send to the recipient
+    public float value; // amount of Apo coins we want to send to the recipient
     public byte[] signature; // this prevents anybody (especially miners) from spending funds in our wallet
 
     public ArrayList<TransactionInput> inputs;
     public ArrayList<TransactionOutput> outputs = new ArrayList<>();
 
-    private static int sequence = 0; // rough count of how many transactions have been generated
+    private static int sequence = 0; // count of how many transactions have been generated
 
     public Transaction(PublicKey from, PublicKey to, float value, ArrayList<TransactionInput> inputs) {
         this.sender = from;
